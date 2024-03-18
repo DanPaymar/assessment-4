@@ -12,6 +12,7 @@ app.use(express.json());
 
 const { getCompliment } = require('./controller')
 const { getFortune } = require('./controller')
+const { getQuote } = require('./controller')
 
 // endpoints
 
@@ -20,6 +21,9 @@ app.get("/api/compliment", getCompliment);
 
 // get the fortune button
 app.get("/api/fortune", getFortune);
+
+// get the random button
+app.get("/api/quote", getQuote);
 
 // get the parameter of the input
 app.get("/api/coffee/:id", (req, res) => {
@@ -31,7 +35,7 @@ app.get("/api/coffee/:id", (req, res) => {
 
 // dropdown items
 app.get("/api/selection", (req, res) => {
-    res.status(200).send(`Did it work`)
+    res.status(200).send(`it works`)
 })
 // listen to the server
 app.listen(4000, () => console.log("Server running on 4000"));
