@@ -98,6 +98,7 @@ function enterName() {
         alert(data)
     })
 }
+console.log(enterName)
 // event listeners
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', fortuneFunc)
