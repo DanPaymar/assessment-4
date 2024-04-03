@@ -14,21 +14,19 @@
 </head>
 
 <body>
+  
+  <!-- top compliment and fortune buttons -->
   <section class="container">
     <div class="row mt-4 justify-content-center">
       <div class="col-4 text-center">
-
         <button type="button" id="complimentButton" class="btn btn-primary">Get a compliment</button>
-
       </div>
       <div class="col-4 text-center">
-
         <button type="button" id="fortuneBtn" class="btn btn-primary">Get your fortune</button>
-
       </div>
     </div>
-
   </section>
+  <!-- section 2 -->
   <section class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -36,8 +34,8 @@
           src="https://media.istockphoto.com/id/1154370446/photo/funny-raccoon-in-green-sunglasses-showing-a-rock-gesture-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=kkZiaB9Q-GbY5gjf6WWURzEpLzNrpjZp_tn09GB21bI=">
       </div>
     </div>
-  </section class="container">
-
+  </section>
+<!-- section 3 -->
   <section class="container mt-4 color-bl">
     <div class="row justify-content-center">
       <div class="col-6 align-items-start">
@@ -49,41 +47,55 @@
         </div>
       </div>
       <div class="col-6 text-center">
+        <!-- input field -->
+        <div class="input-group mb-3">
+          <input id="inputName" type="text" class="submit form-control"
+            placeholder="Your name">
+          <div class="input-group-append">
+          </div>
+          <button id="inputBtnName" class="btn btn-outline-primary submit">Submit</button>
+        </div>
+        
         <div class="input-group mb-3">
           <input id="inputEle" type="text" class="submit form-control"
             placeholder="How many cups of coffee do you drink a day?">
           <div class="input-group-append">
           </div>
-          <button id="inputBtn" class="btn btn-outline-secondary submit">Submit</button>
+          <button id="inputBtn" class="btn btn-outline-primary submit">Submit</button>
         </div>
-        <div class="col-md-6 align-items-start">
-          <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" id="dropBtn" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Pick one
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropBtn">
-              <a class="dropdown-item cap" href="#">Cappucino</a>
-              <a class="dropdown-item latte" href="#">Latte</a>
-              <a class="dropdown-item esp" href="#">Espresso</a>
+        <!--  drop down button -->
+        <div class="row col-md-8">
+          <div class="col-md-4">
+            <button id="quoteBtn" class="btn btn-warning">Press me</button>
+          </div>
+          <div class="col-4">
+            <div class="dropdown">
+              <button class="btn btn-success dropdown-toggle" type="button" id="dropBtn" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pick one
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropBtn">
+                <button class="dropdown-item" value="cap" type="button">Cappucino</button>
+                <button class="dropdown-item" value="latte" type="button">Latte</button>
+                <button class="dropdown-item" value="esp" type="button">Espresso</button>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </section>
 
 
 
 
 
+  
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="main.js"></script>
 
 
 

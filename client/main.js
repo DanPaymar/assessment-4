@@ -1,15 +1,24 @@
 //
+
+const { default: axios } = require("axios")
+
 // create a base url
 const baseURL = "http://localhost:4000/api"
 
 // create variables to store buttons in
 const complimentBtn = document.getElementById("complimentButton")
-const fotuneBtn = document.getElementById("#fortuneBtn")
+const fortuneBtn = document.getElementById("#fortuneBtn")
+const quoteBtn = document.getElementById("#quoteBtn")
 
 const inputElement = document.querySelector("#inputEle")
 const inputBtn = document.querySelector("#inputBtn")
 
-const capItem = document.querySelector(".cap")
+const inputName = document.querySelector("#inputName")
+const btnName = document.querySelector("inputBtnName")
+
+const dropDownItem = document.querySelector("#dropBtn")
+const dropOption = document.querySelector(".dropdown-menu")
+const value = dropOption.value
 
 
 // functions for button actions
@@ -29,6 +38,14 @@ const fortuneFunc = () => {
         })
 }
 
+const getQuote = () => {
+    axios.get(`${baseURL}/quote`)
+    .then(res => {
+        const data = res.data;
+        alert(data)
+    })
+}
+
 function submitFunc() {
     const id = inputElement.value
 
@@ -36,39 +53,55 @@ function submitFunc() {
         .then((res) => {
             console.log(res.data)
 
-            if (inputElement.value < 5) {
-                alert(`You need to drink more coffee!`)
+            if (inputElement.value <= 5) {
+                return alert(`You need to drink more coffee!`)
             }
-            if (inputElement.value > 5 && inputElement.value < 10) {
-                alert(`You're in the sweet spot. Keep it up.`)
+            if (inputElement.value > 5 && inputElement.value <= 10) {
+                return alert(`You're in the sweet spot. Keep it up.`)
             }
             if (inputElement.value > 10) {
-                alert(`You might want to ease off there buddy.`)
+                return alert(`You might want to ease off there buddy.`)
             } else {
-                alert('Try entering a number')
+                return alert('Try entering a number')
             }
         })
 }
 
 function dropDown() {
+    let cap = this.value
+    let latte = this.value
+    let esp = this.value
+
     axios.get(`${baseURL}/selection`)
         .then((res) => {
             console.log(res.data)
 
-            if (capItem.value === capItem.cap) {
+            if (cap) {
+                console.log('tapped cap')
                 alert('Good choice. If you drink 3 of these you will be motivated.')
             }
-            if (capItem.value === capItem.latte) {
+            if (latte) {
+                console.log('tapped latte')
                 alert(`I hope you're thirsty. You're going to need to drink 5 lattes to boost your morale.`)
             }
-            if (capItem.value === capItem.esp) {
-                alert(`YES! YES! YES! 10 shots of these and you'll be achieving all your goals, or bouncing off the walls.`)
+            if (esp) {
+                console.log('tapped esp')
+                alert(`YES! 10 shots of these and you'll be achieving all your goals, or bouncing off the walls.`)
             }
         })
 }
-// event listeners
 
+function enterName() {
+    axios.post(`${base/URL}/name`)
+    .then(res => {
+        const data = res.data;
+        alert(data)
+    })
+}
+// event listeners
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', fortuneFunc)
 inputBtn.addEventListener('click', submitFunc)
-capItem.addEventListener('click', dropDown)
+dropDownItem.addEventListener('click', dropDown)
+quoteBtn.addEventListener('click', getQuote)
+btnName.addEventListener('click', enterName)
