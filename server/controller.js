@@ -46,6 +46,10 @@ module.exports = {
         let randomQuote = quote[randomIndex];
 
         res.status(200).send(randomQuote);
+    },
+    enterName: (req, res) => {
+        let name = ""
+        res.status(200).send(name)
     }
 
 }

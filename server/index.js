@@ -13,7 +13,7 @@ app.use(express.json());
 const { getCompliment } = require('./controller')
 const { getFortune } = require('./controller')
 const { getQuote } = require('./controller')
-
+const { enterName } = require('./controller')
 // endpoints
 
 // get the compliment button
@@ -32,6 +32,8 @@ app.get("/api/coffee/:id", (req, res) => {
    
     res.status(200).send(`Is this what you submitted ${req.params.id}`)
 })
+
+app.post("/api/name", enterName);
 
 // dropdown items
 app.get("/api/selection", (req, res) => {
